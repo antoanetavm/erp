@@ -3,6 +3,7 @@
 import { useGetProductsQuery } from '@/redux/state/api';
 import Header from '@/components/Header';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const columns: GridColDef[] = [
 	{ field: 'productId', headerName: 'ID', width: 90 },
@@ -31,15 +32,16 @@ const columns: GridColDef[] = [
 
 const Inventory = () => {
 	const { data: products, isError, isLoading } = useGetProductsQuery();
+	const t = useTranslation();
 
 	if (isLoading) {
-		return <div className="py-4">Loading vilko...</div>;
+		return <div className="py-4">{t.loading}</div>;
 	}
 
 	if (isError || !products) {
 		return (
 			<div className="text-center text-red-500 py-4">
-				Failed to fetch products
+				{t.failedToFetchProducts}
 			</div>
 		);
 	}

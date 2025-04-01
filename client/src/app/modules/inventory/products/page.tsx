@@ -98,10 +98,7 @@ const Products = () => {
 									{product.name}
 								</h3>
 								<p className="text-gray-800">
-									{t.currency === 'лв'
-										? product.price.toFixed(2)
-										: product.price.toFixed(2) / 2}
-									&nbsp;
+									{product.price.toFixed(2)}
 									{t.currencySymbol}
 								</p>
 								<div className="text-sm text-gray-600 mt-1">

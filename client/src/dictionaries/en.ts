@@ -6,7 +6,11 @@ const en = {
 	inventoryModule: 'Inventory module',
 	crmModule: 'Customer Relationship module',
 	distributorModule: 'Distributor management module',
-	switchLanguage: 'BG',
+	switchLanguage: {
+		language: 'language',
+		en: 'English',
+		bg: 'Български'
+	},
 	dashboard: 'Dashboard',
 	inventory: 'Inventory',
 	products: 'Products',

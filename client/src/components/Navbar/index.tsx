@@ -4,15 +4,17 @@ import { useAppDispatch, useAppSelector } from '@/redux/redux';
 import {
 	setIsDarkMode,
 	setIsSidebarCollapsed,
-	toggleLanguage
+	setNewlanguage
 } from '@/redux/state';
 import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import SvgIcon from '@mui/material/SvgIcon';
-import Switch from '@mui/material/Switch';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import { useTranslation } from '@/hooks/useTranslation';
+import LanguageDropdown from '../LanguageDropdown/LanguageDropdown';
 
 const Navbar = () => {
 	const dispatch = useAppDispatch();
@@ -21,7 +23,7 @@ const Navbar = () => {
 	);
 	const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
 
-	const currentLanguage = useAppSelector((state) => state.global.language);
+	// const currentLanguage = useAppSelector((state) => state.global.language);
 
 	const t = useTranslation();
 
@@ -31,10 +33,6 @@ const Navbar = () => {
 
 	const toggleDarkMode = () => {
 		dispatch(setIsDarkMode(!isDarkMode));
-	};
-
-	const setNewLanguage = () => {
-		dispatch(toggleLanguage(!currentLanguage));
 	};
 
 	const label = { inputProps: { 'aria-label': 'Switch language' } };
@@ -65,7 +63,7 @@ const Navbar = () => {
 			{/* RIGHT SIDE */}
 			<div className="flex justify-between items-center gap-5">
 				<div className="hidden md:flex justify-between items-center gap-5">
-					<Link href="/">ERP</Link>
+					<Link href="/"> ERP system</Link>
 					<div>
 						<button onClick={toggleDarkMode}>
 							{isDarkMode ? (
@@ -78,12 +76,11 @@ const Navbar = () => {
 					<div className="relative">
 						<Bell className="cursor-pointer text-gray-500" size={24} />
 						<span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-[0.4rem] py-1 text-xs font-semibold leading-none text-red-100 bg-red-400 rounded-full">
-							1
+							3
 						</span>
 					</div>
 					<div className="relative">
-						<Switch {...label} defaultChecked onChange={setNewLanguage} />
-						<label>{t.switchLanguage}</label>
+						<LanguageDropdown />
 					</div>
 					<hr className="w-0 h-7 border border-solid border-сl border-gray-300 mx-3" />
 					<div className="flex items-center gap-3 cursor-pointer">

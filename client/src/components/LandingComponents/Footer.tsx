@@ -11,8 +11,8 @@ const Footer = (props: Props) => {
 			<Container>
 				<div className="flex w-full">
 					<div className="flex-2 ">
-						<p className="text-center text-xs text-gray-500">
-							{t.footer.year} {t.inventoryModule} <br />
+						<p className="text-left text-xs text-gray-500">
+							{t.footer.year} {t.erp} <br />
 							{t.footer.author}
 						</p>
 					</div>

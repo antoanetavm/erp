@@ -22,13 +22,13 @@ export const globalSlice = createSlice({
 		setIsDarkMode: (state, action: PayloadAction<boolean>) => {
 			state.isDarkMode = action.payload;
 		},
-		toggleLanguage: (state) => {
-			state.language = state.language === 'en' ? 'bg' : 'en';
+		setNewlanguage: (state, action: PayloadAction<string>) => {
+			state.language = action.payload;
 		}
 	}
 });
 
-export const { setIsSidebarCollapsed, setIsDarkMode, toggleLanguage } =
+export const { setIsSidebarCollapsed, setIsDarkMode, setNewlanguage } =
 	globalSlice.actions;
 
 export default globalSlice.reducer;

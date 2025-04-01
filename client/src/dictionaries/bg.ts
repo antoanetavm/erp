@@ -2,9 +2,13 @@ const bg = {
 	erp: 'Планиране на ресурсите на предприятието',
 	welcome: 'Добре дошли в Инвентарния модул',
 	inventoryModule: 'Инвентарен модул',
-	crmModule: 'Вруаки с клиенти модул',
+	crmModule: 'Връзка с клиенти модул',
 	distributorModule: 'Дистрибуторен модул',
-	switchLanguage: 'EN',
+	switchLanguage: {
+		language: 'език',
+		en: 'English',
+		bg: 'Български'
+	},
 	dashboard: 'Панел',
 	inventory: 'Инвентар',
 	products: 'Продукти',

@@ -1,8 +1,11 @@
 # erp
-TO DO:
-1. Analyse requirenments
-2. Create backend
-3. Create frontend
-4. upload to some cloud
-5. Write teoretical part
-6. Write exam part by examples
+install npm all depandancy
+npm install
+
+Create env file under server/.env
+
+PORT = 8000
+DATABASE_URL="postgresql://postgres:admin@localhost:5432/inventorymanagement?schema=public"
+
+run seed
+npm run seed

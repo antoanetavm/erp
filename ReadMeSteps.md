@@ -32,7 +32,7 @@ https://www.pgadmin.org/download/
    Terminal/ new terminal
    $ > npm run seed
 
-\*\*\*Инсталиране и конфигуриране на pgAdmin
+Инсталиране и конфигуриране на pgAdmin
 
 ---
 

@@ -1,6 +1,7 @@
 # erp
 
-\*\*\* Инсталиране на nodejs
+Step 1:
+Инсталиране на nodejs
 
 1. Изтеглете Node.js (LTS версия) и го инсталирайте.
    https://nodejs.org/en
@@ -12,10 +13,11 @@
    https://www.postgresql.org/
    \*\*Запомнете данните за достъп:
    Потребителско име: postgres
-   Парола: (зададена при инсталацията)
+   Парола: admin (зададена при инсталацията)
    Порт: 5432 (по подразбиране)
 
-\*\*\* Инсталиране и конфигуриране на pgAdmin
+Step 2:
+Инсталиране и конфигуриране на pgAdmin
 https://www.pgadmin.org/download/
 
 1. Изтеглете и инсталирайте pgAdmin
@@ -26,23 +28,28 @@ https://www.pgadmin.org/download/
    Port: 5432
    Username: postgres
 4. Създайте базата данни:
-   Object/Create/Database … фиг.2.4
-   General/Database: inventorymanagement фиг.2.5
-   Отворете терминала на Visual Studio Code:
-   Terminal/ new terminal
-   $ > npm run seed
+   Object/Create/Database
+   General/Database: inventorymanagement
 
-Инсталиране и конфигуриране на pgAdmin
+Step 3:
+Захранване на базата данни
 
----
+VSCode отврете нов терминнал:
 
-install npm all depandancy
+Terminal/New Terminal
+инсталиране на всички пакети
 npm install
 
+Връзка с базата данни
 Create env file under server/.env
 
 PORT = 8000
 DATABASE_URL="postgresql://postgres:admin@localhost:5432/inventorymanagement?schema=public"
 
-run seed
-npm run seed
+Стартиране на скрипта за базата данни
+
+> cd server
+> npx prisma generate
+> npx prisma migrate dev –name init
+> // Your databese is now in sync with your schema
+> npm run seed

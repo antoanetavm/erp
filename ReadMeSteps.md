@@ -32,37 +32,43 @@ https://www.pgadmin.org/download/
    General/Database: inventorymanagement
 
 Step 3:
-Захранване на базата данни
+Създайте env файловете
+client:
+Create .env.local file under client/.env.local
+add:
+// NEXT_PUBLIC_API_BASE_URL = "http://localhost:8000"
 
-VSCode отврете нов терминнал:
-
-Terminal/New Terminal
-инсталиране на всички пакети
-npm install
-
+server:
 Връзка с базата данни
 Create env file under server/.env
+add:
+// PORT = 8000
+// DATABASE_URL="postgresql://postgres:admin@localhost:5432/inventorymanagement?schema=public"
 
-PORT = 8000
-DATABASE_URL="postgresql://postgres:admin@localhost:5432/inventorymanagement?schema=public"
+Step 4:
+инсталиране на всички пакети за проекта:
 
-Стартиране на скрипта за базата данни
-erp>
-
-> cd server
-> npx prisma generate
-> npx prisma migrate dev –name init
-> // Your databese is now in sync with your schema
-> npm run seed
-
-Fronternd :
-Create .env.local file under client/.env.local
-add: NEXT_PUBLIC_API_BASE_URL = "http://localhost:8000"
-
-инсталиране на всички пакети
+VSCode отврете нов терминнал:
+Terminal/New Terminal
 erp>
 cd client
 npm install
 cd ..
+cd server
+npm install
+cd ..
+npm install
 
-erp> npm run start
+Step 5:
+захранване на базата данни / seed database:
+
+cd server
+npx prisma generate
+npx prisma migrate dev --name init
+npm run seed
+cd ..
+
+Step 6:
+Стартиране на проекта
+
+npm run start

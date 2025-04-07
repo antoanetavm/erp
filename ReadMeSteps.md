@@ -47,9 +47,22 @@ PORT = 8000
 DATABASE_URL="postgresql://postgres:admin@localhost:5432/inventorymanagement?schema=public"
 
 Стартиране на скрипта за базата данни
+erp>
 
 > cd server
 > npx prisma generate
 > npx prisma migrate dev –name init
 > // Your databese is now in sync with your schema
 > npm run seed
+
+Fronternd :
+Create .env.local file under client/.env.local
+add: NEXT_PUBLIC_API_BASE_URL = "http://localhost:8000"
+
+инсталиране на всички пакети
+erp>
+cd client
+npm install
+cd ..
+
+erp> npm run start

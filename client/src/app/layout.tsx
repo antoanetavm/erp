@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import LandingPageWrapper from './LandingPageWrapper';
+import StoreProvider from '@/redux/redux';
 
-// const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -18,7 +19,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<LandingPageWrapper>{children}</LandingPageWrapper>
+				<StoreProvider>
+					<LandingPageWrapper>{children}</LandingPageWrapper>
+				</StoreProvider>
 			</body>
 		</html>
 	);

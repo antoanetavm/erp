@@ -43,7 +43,7 @@ export default function TopNavigation() {
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<div className="fixed inset-x-0 top-0 z-10 border-b border-gray-950/5 dark:border-white/10">
+			<div className="fixed inset-x-0 top-0 z-20 border-b border-gray-950/5 dark:border-white/10">
 				<div className="bg-grey-400 ">
 					<div className="flex h-14 items-center justify-between gap-8 px-4 sm:px-6">
 						<div className="flex items-center gap-4">

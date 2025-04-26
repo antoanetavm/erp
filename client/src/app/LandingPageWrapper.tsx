@@ -28,5 +28,9 @@ export default function LandingPageWrapper({
 }: {
 	children: React.ReactNode;
 }) {
-	return <LandingPageLayout>{children}</LandingPageLayout>;
+	return (
+		<StoreProvider>
+			<LandingPageLayout>{children}</LandingPageLayout>;
+		</StoreProvider>
+	);
 }

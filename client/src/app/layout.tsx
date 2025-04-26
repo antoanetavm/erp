@@ -19,9 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<StoreProvider>
-					<LandingPageWrapper>{children}</LandingPageWrapper>
-				</StoreProvider>
+				<LandingPageWrapper>{children}</LandingPageWrapper>
 			</body>
 		</html>
 	);

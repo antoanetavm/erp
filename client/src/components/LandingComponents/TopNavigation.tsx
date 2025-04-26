@@ -63,12 +63,12 @@ export default function TopNavigation() {
 											{t.inventoryModule}
 										</Link>
 									</MenuItem>
-									<MenuItem onClick={handleClose}>
+									{/* <MenuItem onClick={handleClose}>
 										<Link href="/modules/clientRelation">{t.crmModule}</Link>
 									</MenuItem>
 									<MenuItem onClick={handleClose} disabled>
 										<Link href="/">{t.distributorModule}</Link>
-									</MenuItem>
+									</MenuItem> */}
 								</Menu>
 							</div>
 						</div>

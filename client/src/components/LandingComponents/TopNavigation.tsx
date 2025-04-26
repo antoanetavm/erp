@@ -1,23 +1,18 @@
 'use client';
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import { useTranslation } from '@/hooks/useTranslation';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
 import { useAppDispatch, useAppSelector } from '@/redux/redux';
 import { setIsDarkMode, setNewlanguage } from '@/redux/state';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from '@mui/material';
-import { Bell, Languages, Moon, Settings, Sun } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import LanguageDropdown from '../LanguageDropdown/LanguageDropdown';
+import Logo from './Logo/Logo';
 
 export default function TopNavigation() {
-	// const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 	const t = useTranslation();
 	const dispatch = useAppDispatch();
 	const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
@@ -26,10 +21,6 @@ export default function TopNavigation() {
 	const toggleDarkMode = () => {
 		dispatch(setIsDarkMode(!isDarkMode));
 	};
-
-	// const handleChangeLanguage = (e: SelectChangeEvent) => {
-	// 	dispatch(setNewlanguage(e.target.value as string));
-	// };
 
 	const label = { inputProps: { 'aria-label': 'Switch language' } };
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -46,6 +37,9 @@ export default function TopNavigation() {
 			<div className="fixed inset-x-0 top-0 z-20 border-b border-gray-950/5 dark:border-white/10">
 				<div className="bg-grey-400 ">
 					<div className="flex h-14 items-center justify-between gap-8 px-4 sm:px-6">
+						<div className="flex items-center gap-2.5 w-10">
+							{/* <Logo /> */}
+						</div>
 						<div className="flex items-center gap-4">
 							<div className="relative text-xl text-gray-600">
 								{t.erp.toUpperCase()} |
@@ -90,20 +84,6 @@ export default function TopNavigation() {
 								</button>
 							</div>
 							<div className="relative">
-								{/* <Select
-									labelId="select-language-label"
-									id="select-language"
-									value={currentLanguage}
-									onChange={handleChangeLanguage}
-									className="text-gray-500"
-								>
-									<MenuItem value={'bg'}>
-										<span className="text-gray-500">{t.switchLanguage.bg}</span>
-									</MenuItem>
-									<MenuItem value={'en'}>
-										<span className="text-gray-500">{t.switchLanguage.en}</span>
-									</MenuItem>
-								</Select> */}
 								<LanguageDropdown />
 								<Button color="inherit">| Login</Button>
 							</div>
